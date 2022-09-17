@@ -56,7 +56,7 @@ else
 fi
 
 
- ECHO "Setup Catalogue Service"
+echo "Setup Catalogue Service"
   mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service &>>${LOG_FILE}
 if [ $? -eq 0 ]; then
   echo Status = SUCCESS
