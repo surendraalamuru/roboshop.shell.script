@@ -1,9 +1,10 @@
+LOG-FILE=/tmp/frontend
 echo installing Nginx
 yum install nginx -y
 echo status = $?
 
-echo Downloading Nginx web content  &>>/tmp/frontend
-curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>/tmp/frontend
+echo Downloading Nginx web content  &>>LOG-FILE
+curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>LOG-FILE
 echo status = $?
 
 cd /usr/share/nginx/html
@@ -13,13 +14,13 @@ rm -rf * &>>/tmp/frontend
 echo status = $?
 
 echo Extracting web content
-unzip /tmp/frontend.zip &>>/tmp/frontend
+unzip /tmp/frontend.zip &>>LOG-FILE
 echo status = $?
 
-mv frontend-main/static/* . &>>/tmp/frontend
-mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf &>>/tmp/frontend
+mv frontend-main/static/* . &>>LOG-FILE
+mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf &>>LOG-FILE
 
 echo Starting Nginx Service
-systemctl enable nginx &>>/tmp/frontend
-systemctl restart nginx &>>/tmp/frontend
+systemctl enable nginx &>>LOG-FILE
+systemctl restart nginx &>>LOG-FILE
 echo status = $?
