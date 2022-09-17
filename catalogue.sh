@@ -26,7 +26,7 @@ else
   echo Status = FAILURE
 fi
 
-Echo "Download Catalogue Application Code"
+echo "Download Catalogue Application Code"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>${LOG_FILE}
 if [ $? -eq 0 ]; then
   echo Status = SUCCESS
