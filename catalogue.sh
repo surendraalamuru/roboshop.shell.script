@@ -1,5 +1,10 @@
 LOG_FILE=/tmp/catalogue
 
+ID=$(id -u); then
+  echo You should run this script as root user or with sudo privileges.
+  exit 1
+fi
+
 echo "Setup NodeJS"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG_FILE}
 if [ $? -eq 0 ]; then
