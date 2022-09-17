@@ -6,6 +6,7 @@ if [ $? -eq 0 ]; then
   echo Status = SUCCESS
 else
   echo Status = FAILURE
+  exit
 fi
 
 
@@ -15,6 +16,7 @@ if [ $? -eq 0 ]; then
   echo Status = SUCCESS
 else
   echo Status = FAILURE
+  exit
 fi
 
 
@@ -24,6 +26,7 @@ if [ $? -eq 0 ]; then
   echo Status = SUCCESS
 else
   echo Status = FAILURE
+  exit
 fi
 
 echo "Download Catalogue Application Code"
@@ -32,6 +35,7 @@ if [ $? -eq 0 ]; then
   echo Status = SUCCESS
 else
   echo Status = FAILURE
+  exit
 fi
 
 cd /home/roboshop
@@ -42,6 +46,7 @@ if [ $? -eq 0 ]; then
   echo Status = SUCCESS
 else
   echo Status = FAILURE
+  exit
 fi
 
 mv catalogue-main catalogue
@@ -53,6 +58,7 @@ if [ $? -eq 0 ]; then
   echo Status = SUCCESS
 else
   echo Status = FAILURE
+  exit
 fi
 
 
@@ -62,6 +68,7 @@ if [ $? -eq 0 ]; then
   echo Status = SUCCESS
 else
   echo Status = FAILURE
+  exit
 fi
 
 systemctl daemon-reload &>>${LOG_FILE}
@@ -73,4 +80,5 @@ if [ $? -eq 0 ]; then
    echo Status = SUCCESS
  else
    echo Status = FAILURE
+   exit
 fi
