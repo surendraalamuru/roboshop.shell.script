@@ -81,9 +81,9 @@ fi
 echo "Setup Catalogue Service"
   mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service &>>${LOG_FILE}
 if [ $? -eq 0 ]; then
-  echo Status = SUCCESS
+  echo -e Status = "\e[32mSUCCESS\e[0m"
 else
-  echo Status = FAILURE
+  echo -e Status = "\e[31mFAILURE\e[0m"
   exit 1
 fi
 
@@ -93,8 +93,8 @@ systemctl enable catalogue &>>${LOG_FILE}
 echo "Start Catalogue Service"
  systemctl start catalogue &>>${LOG_FILE}
 if [ $? -eq 0 ]; then
-   echo Status = SUCCESS
- else
-   echo Status = FAILURE
-   exit 1
+  echo -e Status = "\e[32mSUCCESS\e[0m"
+else
+  echo -e Status = "\e[31mFAILURE\e[0m"
+  exit 1
 fi
