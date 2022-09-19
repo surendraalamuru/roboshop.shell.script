@@ -29,7 +29,7 @@ rm -rf user &>>${LOG_FILE}
 StatusCheck $?
 
 echo "Extract User Application Code"
-unzip /tmp/user.zip &>>${LOG_FILE}
+unzip -o /tmp/user.zip &>>${LOG_FILE}
 StatusCheck $?
 
 mv user-main user
