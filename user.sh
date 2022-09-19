@@ -36,7 +36,7 @@ mv user-main user
 cd /home/roboshop/user
 
 echo "Install NodeJS Dependencies"
- npm install &>>${LOG_FILE}
+npm install &>>${LOG_FILE}
 StatusCheck $?
 
 
