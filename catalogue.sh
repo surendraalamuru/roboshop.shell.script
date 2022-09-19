@@ -25,16 +25,17 @@ else
   exit 1
 fi
 
-
-echo "Add Roboshop application User"
-useradd roboshop &>>${LOG_FILE}
-if [ $? -eq 0 ]; then
+id roboshop &>>${LOG_FILE}
+if [ $? -ne 0 ]; then
+ echo "Add Roboshop application User"
+ useradd roboshop &>>${LOG_FILE}
+ if [ $? -eq 0 ]; then
   echo Status = SUCCESS
-else
+ else
   echo Status = FAILURE
   exit 1
+ fi
 fi
-
 echo "Download Catalogue Application Code"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>${LOG_FILE}
 if [ $? -eq 0 ]; then
