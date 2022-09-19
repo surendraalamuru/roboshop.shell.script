@@ -1,4 +1,4 @@
-LOG_FILE=/tmp/catalogue
+LOG_FILE=/tmp/redis
 
 source common.sh
 echo "Setup Yum Repos for Redis"
