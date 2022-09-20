@@ -86,8 +86,9 @@ JAVA() {
 
   echo "Download Dependencies and Make Package"
   mvn clean package &>>${LOG_FILE}
-  mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar  &>>${LOG_FILE}
+  mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar &>>${LOG_FILE}
   StatusCheck $?
+
 
   SYSTEMD_SETUP
 
