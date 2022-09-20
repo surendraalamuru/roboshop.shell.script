@@ -52,7 +52,7 @@ echo "Install NodeJS Dependencies"
 npm install &>>${LOG_FILE}
 StatusCheck $?
 echo "Update System Service File"
-sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internsal/' /home/roboshop/user/systemd.service
+sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internsal/' /home/roboshop/${COMPONENT}/systemd.service
 StatusCheck $?
 
 echo "Setup ${COMPONENT} Service"
