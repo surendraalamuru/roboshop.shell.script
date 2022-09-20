@@ -38,7 +38,7 @@ StatusCheck $?
 cd /home/roboshop
 
 echo "Clean old App Content"
-rm -rf${COMPONENT} &>>${LOG_FILE}
+rm -rf ${COMPONENT} &>>${LOG_FILE}
 StatusCheck $?
 
 echo "Extract ${COMPONENT} Application Code"
